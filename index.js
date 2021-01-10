@@ -40,7 +40,7 @@ function headsOrTalesCommand(receivedMessage, arguements){
 }
 
 function randomSelect(){
-    let randomSelectionNum = Math.floot((Math.random()*2) + 1);
+    let randomSelectionNum = Math.floor((Math.random()*2) + 1);
 
     switch (randomSelectionNum){
         case 1: 
