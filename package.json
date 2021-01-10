@@ -1,0 +1,22 @@
+{
+  "name": "headstails",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aaryarajoju/HeadsTails.git"
+  },
+  "author": "AARYA RAJOJU",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aaryarajoju/HeadsTails/issues"
+  },
+  "homepage": "https://github.com/aaryarajoju/HeadsTails#readme",
+  "dependencies": {
+    "discord.js": "^12.5.1"
+  }
+}
