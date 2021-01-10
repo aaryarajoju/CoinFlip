@@ -32,7 +32,7 @@ function headsOrTalesCommand(receivedMessage, arguements){
 
     receivedMessage.channel.send('The result of a coin flip is ' + result);
 
-    if (result = userSelection){
+    if (result == userSelection){
         receivedMessage.channel.send('Congratulations! You\'ve won');
     } else {
         receivedMessage.channel.send('Sorry, you didn\'t win');
@@ -44,11 +44,11 @@ function randomSelect(){
 
     switch (randomSelectionNum){
         case 1: 
-            randomSelection = 'Tails';
+            randomSelection = 'tails';
             break;
         
         case 2:
-            randomSelection = 'Heads';
+            randomSelection = 'heads';
             break;
     }
     return randomSelection;
