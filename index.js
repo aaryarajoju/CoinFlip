@@ -11,10 +11,8 @@ client.on('ready', () => {
 
 client.on('message', (receivedMessage) => {
     if (receivedMessage.author == Discord.Client.user) return;
-
-    if (receivedMessage.content.startsWith(prefix)) {
-        processCommand(receivedMessage)
-    }
+    else if (receivedMessage.content.startsWith(prefix)) processCommand(receivedMessage)
+    else return;
 });
 
 function processCommand(receivedMessage){
@@ -24,18 +22,15 @@ function processCommand(receivedMessage){
     let primaryCommand = splitCommand[0];
     let arguments = splitCommand.slice(1);
 
-    if (primaryCommand.toLowerCase() == 'flip'){
-        someCommand(receivedMessage, arguments);
-    }
+    if (primaryCommand.toLowerCase() == 'flip') someCommand(receivedMessage, arguments);
+    else return;
 }
 
 function someCommand(receivedMessage, arguments){
     if (arguments.length > 1) {
         receivedMessage.channel.send('Number of arguements too many');
         return;
-    }
-
-    if (arguments.length == 0){
+    }else if (arguments.length == 0){
         flipOnceCommand(receivedMessage);
     } else if (arguments.length == 1){
         let numOfTimes = arguments[0];
@@ -46,26 +41,21 @@ function someCommand(receivedMessage, arguments){
 }
 
 function flipOnceCommand(receivedMessage){
-
     result = randomSelect();
-    receivedMessage.channel.send('The result of 1 flip is  **' + result + "**");
-    tailsCounter = 0;
-    headsCounter = 0;
+    receivedMessage.channel.send('The result of the flip is  **' + result + "**");
+    tailsCounter = headsCounter = 0;
+
 }
 
 function flipMultipleCommand(receivedMessage, numOfTimes){
-    
-    var i;
-    var result;
 
-    for (i = 1; i <= numOfTimes; i++){
+    for (var i = 1; i <= numOfTimes; i++){
         result = randomSelect();
         receivedMessage.channel.send(i + '.  **' + result + '**');
     }
     receivedMessage.channel.send('number of TAILS:  **' + tailsCounter + '**');
     receivedMessage.channel.send('number of HEADS:  **' + headsCounter + '**');
-    tailsCounter = 0;
-    headsCounter = 0;
+    tailsCounter = headsCounter = 0;
 }
 
 function randomSelect(){
