@@ -15,6 +15,7 @@ client.on('message', (receivedMessage) => {
     else return;
 });
 
+
 function processCommand(receivedMessage){
 
     let fullCommand = receivedMessage.content.substr(prefix.length);
@@ -44,7 +45,6 @@ function flipOnceCommand(receivedMessage){
     result = randomSelect();
     receivedMessage.channel.send('The result of the flip is  **' + result + "**");
     tailsCounter = headsCounter = 0;
-
 }
 
 function flipMultipleCommand(receivedMessage, numOfTimes){
